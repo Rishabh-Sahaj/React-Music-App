@@ -9,14 +9,16 @@ class Main extends Component {
     super()
     this.state = {
       id: 1,
-      currentSong: 'Clouds In The Forest'
+      currentSong: 'Clouds In The Forest',
+      seekbarReset: true
     }
   }
 
     setMainState = (id, currentSong) => {
       this.setState({
         id,
-        currentSong
+        currentSong,
+        seekbarReset: true
       })
     }
     // setPlayingOnState = (playing) => {

@@ -13,8 +13,13 @@ const MainLower = (props) => {
         setMainState(songId,songToPlay);
     }
    
-    const SongsList = songsList.map(song => {
-        return <li key={song.id}><div className='triangle' onClick={ (e) => {handleClick(e,song.id,song.title)} }></div> <small>0{song.id} {song.title}</small></li>;
+    const SongsList = songsList.map( (song,i,arr) => {
+        if (song === arr[0]){
+          return <li key={song.id}><div className='triangle active' onClick={ (e) => {handleClick(e,song.id,song.title)} }></div> <small>0{song.id} {song.title}</small></li>;
+        } 
+        else {
+          return <li key={song.id}><div className='triangle' onClick={ (e) => {handleClick(e,song.id,song.title)} }></div> <small>0{song.id} {song.title}</small></li>;
+        }
     });
 
     return (

@@ -1,19 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Cd from '../../cd.png';
 import Rewind from '../../rewind.png';
 import Pause from '../../pause.png';
 import Forward from '../../forward.png';
 
-const MainUpper = (props) => {
-
-    const {album, currentSong} = props;
-
-    window.onload = function(){
-        const seekBar = document.querySelector(".fill"); 
-        seekBar.style.width = '100%';
+class MainUpper extends Component {
+    constructor(){
+      super()
+      this.state = {
+        seekbarReset: true
+      }
+    }
+    componentDidMount(){
+      this.seekbarReset();
     }
 
-    return (
+    seekbarReset = () => {
+      console.log(this.props);
+      const seekBar = document.querySelector(".fill");
+      // seekBar.style.transition = 'none'; 
+      // seekBar.style.width = 0;
+      // window.onload = () => {
+      //   if(this.state.seekbarReset) {
+      //     seekBar.style.transition = 'width 2s linear'; 
+      //     seekBar.style.width = '100%';
+      //   }
+      // };
+      let width = 0;
+      seekBar.style.width = width;
+		  const id = setInterval(frame, 10);
+		  function frame() {
+		    if (width === 100) {
+          width = 0;
+          seekBar.style.width = width;
+          console.log('end');
+		      clearInterval(id);
+		    } else {
+          console.log('yo');
+		      width++; 
+		      seekBar.style.width = width + '%'; 
+		    }
+		  }
+    }
+
+    componentDidUpdate(){   
+      this.seekbarReset();
+    }
+    render() {
+      const {album, currentSong} = this.props;
+      return (
         <div className='d-flex justify-content-center'>                            
             <div className='cd_img pt-5'>
               <div><img src={Cd} className="d-block w-100 img-fluid" alt="..." />    </div>
@@ -36,7 +71,8 @@ const MainUpper = (props) => {
             </div>
             </div> 
         </div> 
-    );
+      );
+    }
 }
 
 export default MainUpper
