@@ -16,7 +16,6 @@ class MainUpper extends Component {
     }
 
     seekbarReset = () => {
-      console.log(this.props);
       const seekBar = document.querySelector(".fill");
       // seekBar.style.transition = 'none'; 
       // seekBar.style.width = 0;
@@ -33,10 +32,8 @@ class MainUpper extends Component {
 		    if (width === 100) {
           width = 0;
           seekBar.style.width = width;
-          console.log('end');
 		      clearInterval(id);
 		    } else {
-          console.log('yo');
 		      width++; 
 		      seekBar.style.width = width + '%'; 
 		    }
