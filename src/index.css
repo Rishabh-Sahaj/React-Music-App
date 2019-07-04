@@ -11,3 +11,146 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.App {background-color: #f8f8f8;}
+/*//////////////////////////////////////*/
+.carousel {
+  background-color: #f0efed;
+}
+
+.carousel .d-flex .carousel_image, .carousel .d-flex .carousel_content {
+   flex: 0 1 50%;
+   align-self: flex-end;
+}
+.carousel .d-flex .carousel_image > div {
+  max-width: 400px;
+  margin-left: auto;
+}
+.carousel .d-flex .carousel_image div img {
+  transform: translateY(9px);
+}
+.carousel .d-flex .carousel_image div h1 {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+.carousel .d-flex .carousel_image div h1 .fName{
+  font-size: 55px;
+  color: #7f675b;
+  font-weight: 700;
+}
+.carousel .d-flex .carousel_image div h1 .lName{
+  font-size: 55px;
+  color: #231c17;
+  font-weight: 700;
+}
+.carousel .d-flex .carousel_content > div {
+  max-width: 450px;
+  padding: 0 20px;
+}
+
+
+
+
+.carousel-control-next-icon {
+  background-image: url('/img/arrow.png');
+}
+.carousel-control-prev-icon {
+  background-image: url('/img/arrow.png');
+  transform: rotateY(180deg);
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+/*//////////////////////////////////////////*/
+.main {
+  max-width: 900px;
+  margin: auto;
+}
+.main .cd_img, 
+.main .player,
+.main .disco, 
+.main .songsList {
+  flex: 0 1 50%;
+  /* align-self: flex-end; */
+}
+.main .cd_img > div {
+  max-width: 400px;
+  margin-right: auto;
+}
+
+.seek_bar {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #7f675b;
+}
+.fill {
+    height: 5px;
+    width: 25px;
+    background-color: #e4e0dc;
+    position: relative;
+    transition: width 25s linear;
+}
+.handle {
+width: 20px;
+height: 20px;
+border-radius: 20px;
+background-color: #7f675b;
+position: absolute;
+right: -12px;
+bottom: -7px;
+}
+
+/*///Main Lower///*/
+.triangle {
+  display: inline-block;
+  width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 10px solid #dedede;
+  border-bottom: 5px solid transparent;
+  cursor: pointer;
+}
+.triangle.active {
+	border-left: 10px solid #7e6457;
+}
+
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #e4e0dc;
+  position: absolute;
+  top: 21%;
+  right: 7%;
+}
+
+.main .disco > div {
+  max-width: 460px;
+  margin-left: auto;
+}
+.main .disco .listen-btn,
+.main .disco .buy-btn {
+    padding: 2px 5px;
+    width: 60px;
+    border: none;
+    font-weight: 500;
+}
+.main .disco .listen-btn {
+  background-color: #e4e0dc;
+  color: #7e6457;
+}
+.main .disco .buy-btn {
+  background-color:  #7e6457;
+  color: #e4e0dc ;
+}
